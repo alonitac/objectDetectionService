@@ -19,7 +19,7 @@ pipeline {
 
             post {
                 always {
-                    junit allowEmptyResults: true, testResults: 'results.xml'
+                    junit allowEmptyResults: true, testResults: 'yolo5/results.xml'
                 }
 
             }
