@@ -5,7 +5,6 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh '''
-                sudo apt install python3-pip -y
                 pip install -r yolo5/requirements.txt
                 '''
             }
