@@ -2,9 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Unittest') {
+        stage('Install dependencies') {
             steps {
-                echo "testing"
+                sh '''
+                sudo apt install python3-pip
+                pip install -r yolo5/requirements.txt
+                '''
+            }
+        }
+        stage('Yolo5 - Unittest') {
+            steps {
+                sh '''
+                cd yolo5
+                python3 -m pytest --junitxml results.xml tests
+                '''
             }
         }
         stage('Lint') {
