@@ -17,7 +17,7 @@ logger.info(f'supported files are: {ALLOWED_EXTENSIONS}')
 
 
 app = Flask(__name__, static_url_path='')
-UPLOAD_FOLDER = 'data/images'
+UPLOAD_FOLDER = 'data/image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
